@@ -14,10 +14,10 @@ body{
   font-style: normal;
   font-variant: normal;
   text-transform: none;
-  background: #2E51A4;
-  background: -moz-linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
-  background: -webkit-linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
-  background: linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
+  background: #0B7EA4;
+background: -moz-linear-gradient(top, #0B7EA4 0%, #5BB0CB 80%, #99CFCA 100%);
+background: -webkit-linear-gradient(top, #0B7EA4 0%, #5BB0CB 80%, #99CFCA 100%);
+background: linear-gradient(to bottom, #0B7EA4 0%, #5BB0CB 80%, #99CFCA 100%);
   }
  
 .icons {
@@ -43,7 +43,6 @@ height: 40%;
 .project{
   width: 50%;
   float: left;
-  background-color: #fff;
   padding: 16px;
 }
 
@@ -63,8 +62,8 @@ margin-bottom: 8px;
 }
 
 a {
-  color: #000;
-  text-decoration: none;
+  color: #a12424;
+
 }
 
 a:hover {
