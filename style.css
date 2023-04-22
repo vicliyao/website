@@ -1,44 +1,60 @@
 /*Font style*/
 body{
-    font-family: "Times New Roman", Times, serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    color: #000000;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background: #2E51A4;
-    background: -moz-linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
-    background: -webkit-linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
-    background: linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
-    }
-    
-    #icons {
-     float:center;
-      width:200px;
-      height:150px
-      
-    }
-    
-    .content {
-      width: 50%;
-      float: left;
-      margin-left: 20px;
-    }
-    .content p {
-      display: inline-block;
-      vertical-align: top;
-    }
-    
-    .project{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background: #2E51A4;
+  background: -moz-linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
+  background: -webkit-linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
+  background: linear-gradient(45deg, #2E51A4 0%, #66CBB4 0%, #444F75 100%);
+  }
+  
+  .icons {
+   float:right;
+    width:200px;
+    height:150px;
+  }
+  
+body h1{
+text-align:center;
+}
+h2{
+text-align:center;
+}
+  .intro {
     width: 50%;
-      float: left;
-      margin-left: 20px;
-    }
-    a:hover{
-      color: #6CA47D;
-    }
-    
+    text-align: center;
+  }
+  
+  
+  .project{
+  width: 50%;
+   text-align: center;
+
+  }
+  a:hover{
+    color: #6CA47D;
+  }
+ 
+
+.list{
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+.list dt {
+font-weight: bold;
+}
+
+.list dd {
+margin-left: 0;
+margin-bottom: 8px;
+}
