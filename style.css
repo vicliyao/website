@@ -24,7 +24,6 @@ background: linear-gradient(to bottom, #0B7EA4 0%, #5BB0CB 80%, #99CFCA 100%);
   float:right;
   width:200px;
   height:200px;
-  margin-left: 16px;
   display:flex;
   flex-direction:row;
 }
@@ -34,7 +33,7 @@ width: 40%;
 height: 40%;
 } 
 
-img:hover{
+.icons:hover{
   color:#3333FF;
 }
 
