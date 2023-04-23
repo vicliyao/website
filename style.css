@@ -1,6 +1,6 @@
-/*Font style*/
+
 body{
-  max-width: 800px;
+  min-height:100%;
   margin: 0 auto;
   padding: 16px;
   font-family: "Times New Roman", Times, serif;
@@ -22,19 +22,13 @@ background: linear-gradient(to bottom, #0B7EA4 0%, #5BB0CB 80%, #99CFCA 100%);
  
 .icons {
   float:right;
-  width:200px;
-  height:200px;
   display:flex;
   flex-direction:row;
 }
-  
-.icons img {
-width: 40%;
-height: 40%;
-} 
 
-.icons:hover{
-  color:#3333FF;
+
+img:hover{
+  transform:rotate(180deg);
 }
 
 #intro {
