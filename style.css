@@ -25,6 +25,8 @@ background: linear-gradient(to bottom, #0B7EA4 0%, #5BB0CB 80%, #99CFCA 100%);
   width:200px;
   height:150px;
   margin-left: 16px;
+  display:flex;
+  flex-direction:row;
 }
   
 .icons img {
