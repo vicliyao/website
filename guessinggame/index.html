@@ -64,8 +64,8 @@
             let userGuess = Number(guessField.value);
             if (guessCount === 1){
                 guesses.textContent = "Previous guesses: ";
-                guesses.textContent += userGuess + " ";
-              
+            }
+              guesses.textContent += userGuess + " ";
                 if (userGuess === randomNumber){
                   lastResult.textContent = "Congratulations! You got it right! ";
                   lastResult.style.backgroundColor = "green";
@@ -80,16 +80,13 @@
                 else{
                   lastResult.textContent = "Wrong!";
                   lastResult.style.backgroundColor = "red";
+                }
                   if (userGuess < randomNumber){
                     lowOrHi.textContent = "Last guess was too low!";
                   }
                   else if(userGuess > randomNumber){
                     lowOrHi.textContent = "Last guess was too low!";
                   }
-
-                }
-                  
-                }
             
             guessCount++;
             guessField.value = " ";
@@ -111,8 +108,9 @@
         function resetGame(){
           guessCount = 1;
           const resetParas = document.querySelectorAll(".resultParas p");
+         
           for (const resetPara of resetParas){
-            reset.Para.textContent = " ";
+            resetPara.textContent = " ";
           }
 
           resetButton.parentNode.removeChild(resetButton);
