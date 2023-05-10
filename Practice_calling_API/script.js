@@ -46,12 +46,41 @@ app.get('/5day', (req, res) => {
           // Printing status code
           console.log('StatusCode:',response.statusCode);
           
-          
-          // Printing TEMP for each day at 12pm noon
+          // Calculate Average TEMP for each day
           const data = JSON.parse(body);
-          for(var i=2;i<data.list.length;i+=8){// Observe that 12pm temp for the first day is the 2nd, each one after is + 8
-          console.log(data.list[i].main.temp);
-        }
+          var temp = []; //Store all temp from response
+          var averages = []; //Store Average temp after calculation
+          
+          //Get all temps from response
+          for (let i=0;i<data.list.length;i++){
+            temp.push(data.list[i].main.temp) 
+          }
+          
+          // --------------
+          // For first day
+          var A1 =0; //Initialize Average value for day1
+          for (let i=0; i<6; i++){
+            A1 += temp[i]
+          }
+          averages.push(A1/6); //Store in list
+          
+          //---------------
+          // For Day 2 - 5
+          let sum = 0;
+          let count = 0;
+          for (let i=6; i<temp.length-2; i+=8){   //Start at index 6. Last 2 elements are for day 6(we dont need it)
+            for (let j=i;  j< i + 8; j++){    //Loop through next 8 elements starting at index i
+              sum += temp[j];
+              count++;
+            }
+            const avg = sum/count;        //Calculate the average by dividing by 8
+            averages.push(avg);     //append
+            sum = 0;               //Reset sum and count for next iteration
+            count = 0;
+          }
+
+          console.log(averages)
+      
       });
   });
 
