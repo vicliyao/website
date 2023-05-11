@@ -23,10 +23,10 @@ app.get('/weather/:lat/:lon', (req, res) => {
 		
         
 		// Printing TEMP
-        const body = JSON.parse(body);
+        const data = JSON.parse(body);
+        res.send({"temperature": body.main.temp, "WeatherStatus":body.weather.main});
+		    console.log(body.main.temp);
         
-        res.send({"temperature": body.main.temp, "WeatherStatus":body.weather[0].main});
-		console.log(body.main.temp);
 	});
 });
 
