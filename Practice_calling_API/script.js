@@ -6,7 +6,6 @@ const app = express();
 const API_KEY = "44410596c1e0b580b79b3679c28c51f8";
 
 app.get('/weather/:lat/:lon', (req, res) => {
-  res.send('Hello World!');
   console.log("welcome to the root!");
   var lat = req.params.lat;
   var lon = req.params.lon;
@@ -24,8 +23,9 @@ app.get('/weather/:lat/:lon', (req, res) => {
         
 		// Printing TEMP
         const data = JSON.parse(body);
-        res.send({"temperature": body.main.temp, "WeatherStatus":body.weather.main});
-		    console.log(body.main.temp);
+        res.send({"temperature": data.main.temp, "WeatherStatus":data.weather[0].main});
+
+        
         
 	});
 });
@@ -33,10 +33,9 @@ app.get('/weather/:lat/:lon', (req, res) => {
 
 // Extra credit: 5 Day
 app.get('/5day/:lat/:lon', (req, res) => {
-    res.send('Hello World!');
     console.log("5-day forecast(In Fahrenheit)");
-    var lat = "req.params.lat";
-    var lon = "req.params.lon";
+    var lat = req.params.lat;
+    var lon = req.params.lon;
     
     var url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`;
     
@@ -53,11 +52,11 @@ app.get('/5day/:lat/:lon', (req, res) => {
           const week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
           const forecast = [];
           let todaysDate = new Date().getDay()
-
+          console.log(data.list)
           for (let i=0;i<5;i++){
             let tempSum = 0
             let count = 0
-            for (let dataPoint of data.list){
+            for (let dataPoint in data.list){
               const date = new Date(dataPoint.dt*1000)
               if (date.getDay() == todaysDate){
                 count++;
