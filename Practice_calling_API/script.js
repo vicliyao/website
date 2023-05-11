@@ -52,11 +52,11 @@ app.get('/5day/:lat/:lon', (req, res) => {
           const week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
           const forecast = [];
           let todaysDate = new Date().getDay()
-          console.log(data.list)
+          
           for (let i=0;i<5;i++){
             let tempSum = 0
             let count = 0
-            for (let dataPoint in data.list){
+            for (let dataPoint of data.list){
               const date = new Date(dataPoint.dt*1000)
               if (date.getDay() == todaysDate){
                 count++;
